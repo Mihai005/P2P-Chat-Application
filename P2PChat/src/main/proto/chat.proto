@@ -1,0 +1,18 @@
+syntax = "proto3";
+package com.example;
+option java_package = "com.example";
+option java_outer_classname = "ChatProtobufs";
+
+message ChatMessage {
+  enum MessageType {
+    HELLO = 0;
+    ACK = 1;
+    TEXT = 2;
+    BYE = 3;
+  }
+
+  MessageType type = 1;
+  string senderName = 2;
+  string content = 3;
+  string recipientName = 4;
+}
